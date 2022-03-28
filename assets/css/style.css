@@ -1,0 +1,183 @@
+:root {
+  --roxo: hsl(263, 55%, 52%);
+  --chumbo: hsl(217, 19%, 35%);
+  --verificado-chumbo: hsl(217, 19%, 35%, 50%);
+  --testemunho-chumbo: hsl(217, 19%, 35%, 70%);
+  --azul-escuro: hsl(219, 29%, 14%);
+  --branco: hsl(0, 0%, 100%);
+  --cinza-claro: hsl(0, 0%, 81%);
+  --cinza-azul-claro: hsl(210, 46%, 95%);
+  --verificado-cinza-azul-claro: hsl(210, 46%, 95%, 50%);
+  --testemunho-cinza-azul-claro: hsl(210, 46%, 95%, 70%);
+  --sombra-cartao: hsl(217, 19%, 35%, 30%);
+  --barlow: 'Barlow Semi Condensed', sans-serif;
+}
+
+/* Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+
+body {
+  font-size: 13px;
+  font-family: var(--barlow);
+  background-color: var(--cinza-azul-claro);
+}
+
+.corpo {
+  display: grid;
+  grid-template-columns: 1fr;
+  color: var(--cinza-azul-claro);
+  margin: 3rem 1rem;
+}
+
+.cartao {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 1rem 1rem;
+  padding: 1.75rem;
+  line-height: 1.5rem;
+  box-shadow: 8px 8px 30px var(--sombra-cartao);
+}
+
+.cartao--destaque{
+  background-image: url(../img/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 1.5rem);
+}
+
+.cartao__topo {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  grid-template-rows: auto auto;
+  margin-bottom: 1rem;
+  line-height: 1rem;
+}
+
+.cartao__imagem {
+  border: 2px solid var(--verificado-cinza-azul-claro);
+  border-radius: 100%;
+  margin-right: 1rem;
+  grid-row: span 2;
+  height: 32px;
+  width: 32px;
+  align-self: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cartao__imagem--daniel {
+  background-image: url(../img/image-daniel.jpg);
+}
+
+.cartao__imagem--jonathan {
+  background-image: url(../img/image-jonathan.jpg);
+}
+
+.cartao__imagem--jeanette {
+  background-image: url(../img/image-jeanette.jpg);
+}
+
+.cartao__imagem--patrick {
+  background-image: url(../img/image-patrick.jpg);
+}
+
+.cartao__imagem--kira {
+  background-image: url(../img/image-kira.jpg);
+}
+
+.cartao__nome {
+  grid-column-start: 2;
+}
+
+.cartao__verificado {
+  grid-column-start: 2;
+  color: var(--verificado-cinza-azul-claro);
+}
+
+.cartao__verificado--jeanette {
+  color: var(--verificado-chumbo);
+}
+
+.cartao__verificado--kira {
+  color: var(--verificado-chumbo);
+}
+
+.cartao__quote {
+  font-size: 1.3rem;
+  line-height: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.cartao--daniel {
+  background-color: var(--roxo);
+}
+
+.cartao--jonathan {
+  background-color: var(--chumbo);
+}
+
+.cartao--jeanette {
+  background-color: var(--branco);
+  color: var(--chumbo);
+}
+
+.cartao--patrick {
+  background-color: var(--azul-escuro);
+}
+
+.cartao--kira {
+  background-color: var(--branco);
+  color: var(--chumbo);
+}
+
+.cartao__testemunho {
+  color: var(--testemunho-cinza-azul-claro);
+}
+
+.cartao__testemunho--jeanette {
+  color: var(--testemunho-chumbo);
+}
+
+.cartao__testemunho--kira {
+  color: var(--testemunho-chumbo);
+}
+
+@media screen and (min-width: 1440px) {
+  .corpo {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 10% 10%;
+  }
+
+  .cartao--destaque{
+    background-position-x: calc(100% - 5rem);
+  }
+
+  .cartao--daniel {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+  }
+
+  .cartao--jonathan {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .cartao--jeanette {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .cartao--patrick {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+  }
+
+  .cartao--kira {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+}
